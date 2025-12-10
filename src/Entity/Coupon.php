@@ -62,4 +62,19 @@ class Coupon
 
         return $this;
     }
+
+    public function __construct(string $code, float $discountAmount, bool $isPercentageDiscount)
+    {
+        $this->code = $code;
+        $this->discountAmount = $discountAmount;
+        $this->isPercentageDiscount = $isPercentageDiscount;
+    }
+
+    public function applyDiscount(float $totalPrice): float
+    {
+        if ($this->isPercentageDiscount) {
+            return $totalPrice - ($totalPrice * $this->discountAmount / 100);
+        }
+        return max($totalPrice - $this->discountAmount, 0);
+    }
 }
