@@ -1,5 +1,6 @@
 # Выполненое тестовое задание 
-https://github.com/systemeio/backend-test-task
+Исходник задания: https://github.com/systemeio/backend-test-task
+Разработчик: https://hh.ru/resume/507107a3ff0fa3b9de0039ed1f7671776d5031
 
 ## Запуск
 
