@@ -11,3 +11,18 @@ services:
             - .:/app:rw
         environment:
             - APP_ENV=dev
+
+    db:
+        image: postgres:13
+        restart: always
+        environment:
+            POSTGRES_DB: test_task
+            POSTGRES_USER: test_task
+            POSTGRES_PASSWORD: test_task
+        ports:
+            - "5432:5432"
+        volumes:
+            - pg_data:/var/lib/postgresql/data
+
+volumes:
+    pg_data:
